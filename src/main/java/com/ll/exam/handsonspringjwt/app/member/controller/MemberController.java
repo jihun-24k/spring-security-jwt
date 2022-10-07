@@ -2,6 +2,7 @@ package com.ll.exam.handsonspringjwt.app.member.controller;
 
 import com.ll.exam.handsonspringjwt.app.member.entity.Member;
 import com.ll.exam.handsonspringjwt.app.member.service.MemberService;
+import com.ll.exam.handsonspringjwt.util.Util;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -38,11 +39,9 @@ public class MemberController {
         }
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authentication", "JWT키");
+        headers.set("Authentication", "JWT_Access_Token");
 
-        String body = "username : %s, password : %s".formatted(loginDto.getUsername(), loginDto.getPassword());
-
-        return new ResponseEntity<>(body, headers, HttpStatus.OK);
+        return Util.spring.responseEntityOf(headers);
     }
 
     @Data
