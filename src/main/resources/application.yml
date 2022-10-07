@@ -6,3 +6,7 @@ spring:
   logging:
     level:
       com.ll.exam.handsonspringjwt.app: debug
+
+custom:
+  jwt:
+    secretKey: secretKeysecretKeysecretKeysecretKeysecretKeysecretKeysecretKeysecretKeysecretKeysecretKey

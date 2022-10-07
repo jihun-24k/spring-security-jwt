@@ -1,9 +1,6 @@
 package com.ll.exam.handsonspringjwt.app.base.entity;
 
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -18,7 +15,7 @@ import java.util.Map;
 import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PROTECTED;
 
-@Setter
+@Getter
 @SuperBuilder
 @MappedSuperclass
 @NoArgsConstructor(access = PROTECTED)
