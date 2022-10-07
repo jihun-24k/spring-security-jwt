@@ -66,7 +66,7 @@ public class Util {
         public static HttpHeaders httpHeadersOf(String... args) {
             HttpHeaders headers = new HttpHeaders();
 
-            Map<String, String> map = Util.mapOf((Object) args);
+            Map<String, String> map = Util.mapOf(args);
 
             for (String key : map.keySet()) {
                 String value = map.get(key);

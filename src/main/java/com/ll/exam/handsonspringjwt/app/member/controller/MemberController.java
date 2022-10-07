@@ -29,6 +29,15 @@ public class MemberController {
         return "안녕" + memberContext;
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<RsData> memberMe(@AuthenticationPrincipal MemberContext memberContext) {
+        if (memberContext == null) { // 임시코드, 나중에는 시프링 시큐리티를 이용해서 로그인을 안했다면, 아예 여기로 못 들어오도록
+            return Util.spring.responseEntityOf(RsData.failOf(null));
+        }
+
+        return Util.spring.responseEntityOf(RsData.successOf(memberContext));
+    }
+
     @PostMapping("/login")
     public ResponseEntity<RsData> login(@RequestBody LoginDto loginDto) {
         if (loginDto.isNotValid()) {
